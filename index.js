@@ -19,7 +19,7 @@ function runApp () {
             type: "list",
             message: "Enter the type of employee you want to add:",
             name: "addEmployeePrompt",
-            choices: ["Intern","Engineer","Manager","Back"]
+            choices: ["Intern","Engineer","Manager","Next"]
         }]).then(function (userInput) {
             switch(userInput.addEmployeePrompt) {
               case "Manager":
@@ -144,6 +144,16 @@ function addManager() {
     });
 
   }
+
+  //HTML Builder 
+  function htmlBuilder () {
+    console.log("Team created!")
+
+    fs.writeFileSync(outputPath, generateTeam(teamArray), "UTF-8")
+
+}
+
+createTeam();
 
 
 }
