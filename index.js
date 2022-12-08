@@ -17,9 +17,31 @@ function runApp () {
     function createTeam () {
         inquirer.prompt([{
             type: "list",
-            message: "Enter the type of employee you want to add:"
-            name: "addEmployeePrompt"
+            message: "Enter the type of employee you want to add:",
+            name: "addEmployeePrompt",
             choices: ["Intern","Engineer","Manager","Back"]
-        }])
+        }]).then(function (userInput) {
+            switch(userInput.addEmployeePrompt) {
+              case "Manager":
+                addManager();
+                break;
+              case "Engineer":
+                addEngineer();
+                break;
+              case "Intern":
+                addIntern();
+                break;
+      
+              default:
+                htmlBuilder();
+            }
+          })
     }
+
+
+
+
+    
 }
+
+
