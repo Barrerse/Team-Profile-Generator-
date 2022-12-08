@@ -38,10 +38,45 @@ function runApp () {
           })
     }
 
-
-
-
+    // Add Intern constructor
+    function addIntern() {
+        inquirer.prompt([
+          
+          {
+            type: "input",
+            name: "internName",
+            message: "Enter the name of the employee:"
+          },
     
+          {
+            type: "input",
+            name: "internId",
+            message: "Enter employee's ID Number:" 
+          },
+    
+          {
+            type: "input",
+            name: "internEmail",
+            message: "Enter employee's Email address:"
+          },
+    
+          {
+            type: "input",
+            name: "internSchool",
+            message: "Enter emplotee's school:"
+          }
+    
+        ]).then(answers => {
+          const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
+          teamArray.push(intern);
+          createTeam();
+        });
+    
+      }
+
+
+
+
 }
 
 
