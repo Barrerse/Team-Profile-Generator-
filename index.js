@@ -97,12 +97,12 @@ function addEngineer() {
 
       {
         type: "input",
-        name: "engineerSchool",
-        message: "Enter employee's school:"
+        name: "engineerGithub",
+        message: "Enter employee's GitHub user:"
       }
 
     ]).then(answers => {
-      const intern = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerSchool);
+      const intern = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub);
       teamArray.push(Engineer);
       createTeam();
     });
@@ -134,11 +134,11 @@ function addManager() {
       {
         type: "input",
         name: "managerSchool",
-        message: "Enter emplotee's school:"
+        message: "Enter managers Office Number:"
       }
 
     ]).then(answers => {
-      const intern = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.managerSchool);
+      const intern = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.managerOfficeNumber);
       teamArray.push(Manager);
       createTeam();
     });
