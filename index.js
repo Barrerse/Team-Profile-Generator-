@@ -63,7 +63,7 @@ function runApp () {
           {
             type: "input",
             name: "internSchool",
-            message: "Enter emplotee's school:"
+            message: "Enter employee's school:"
           }
     
         ]).then(answers => {
@@ -73,8 +73,77 @@ function runApp () {
         });
     
       }
+// Add Engineer 
+function addEngineer() {
+    inquirer.prompt([
+      
+      {
+        type: "input",
+        name: "engineerName",
+        message: "Enter the name of the employee:"
+      },
 
+      {
+        type: "input",
+        name: "engineerId",
+        message: "Enter employee's ID Number:" 
+      },
 
+      {
+        type: "input",
+        name: "engineerEmail",
+        message: "Enter employee's Email address:"
+      },
+
+      {
+        type: "input",
+        name: "engineerSchool",
+        message: "Enter employee's school:"
+      }
+
+    ]).then(answers => {
+      const intern = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerSchool);
+      teamArray.push(Engineer);
+      createTeam();
+    });
+
+  }
+
+// Add Manager
+function addManager() {
+    inquirer.prompt([
+      
+      {
+        type: "input",
+        name: "managerName",
+        message: "Enter the name of the employee:"
+      },
+
+      {
+        type: "input",
+        name: "managerId",
+        message: "Enter employee's ID Number:" 
+      },
+
+      {
+        type: "input",
+        name: "managerEmail",
+        message: "Enter employee's Email address:"
+      },
+
+      {
+        type: "input",
+        name: "managerSchool",
+        message: "Enter emplotee's school:"
+      }
+
+    ]).then(answers => {
+      const intern = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.managerSchool);
+      teamArray.push(Manager);
+      createTeam();
+    });
+
+  }
 
 
 }
